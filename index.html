@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Memories</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+
+        <h1 class="header-title">Воспоминания о путешествиях</h1>
+
+    </header>
+
+    <main class="main">
+
+        <section class="create-travel">
+
+            <h2 class="travel-title">Поделись поездкой</h2>
+
+            <!-- action - отправь данные по адресу /submit. нужен если есть бэк
+                id - для js
+                class - для css
+            -->
+            <form class="travel-form" id="travelForm">
+
+                <div class="travel-input--group">
+
+                    <label for="formCountry">Название места</label>
+
+                    <!-- required - это атрибут который делает поле обязательным для заполнения -->
+                    <input type="text" id="formCountry" placeholder="Tokyo" required>
+
+                </div>
+
+                <div class="travel-input--group">
+
+                    <label for="formDate">Дата путешествия</label>
+
+                    <input type="date" id="formDate" required>
+
+                </div>
+
+                <div class="travel-input--group">
+
+                    <label for="formComment">Краткое описание</label>
+
+                    <input type="text" id="formComment" placeholder="Лучшее путешествие в моей жизни" required>
+
+                </div>
+
+                <button type="submit" class="travel-btn">Добавить воспоминание</button>
+
+            </form>
+
+        </section>
+
+        <section class="cards-travel">
+
+            <div class="empty-state" id="emptyState">Карточек пока нет</div>
+
+            <div class="cards-travel--list" id="cardList"></div>
+
+        </section>
+
+    </main>
+    
+    <script src="./script/main.js"></script>
+</body>
+</html>

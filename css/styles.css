@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+
+    /* 🌿 Background */
+    --bg-color: #F6F1E9;
+    --card-color: #FFFDF8;
+
+    /* 🌊 Primary palette */
+    --primary-color: #3BA7A0;      /* морская бирюза */
+    --primary-hover: #2B8C86;
+
+    /* 🌱 Secondary / nature */
+    --secondary-color: #7BAE7F;    /* мягкая зелень */
+
+    /* 🧴 Inputs */
+    --input-bg: #EEF7F2;
+    --border-color: #D8CFC4;
+
+    /* ✍️ Text */
+    --text-main: #2F3A3D;
+    --text-secondary: #6B7C75;
+
+    /* 🌫 Shadows */
+    --shadow-sm: 0 2px 8px rgba(47, 58, 61, 0.08);
+    --shadow-md: 0 6px 18px rgba(47, 58, 61, 0.12);
+    --shadow-lg: 0 12px 30px rgba(47, 58, 61, 0.18);
+
+    /* 🌊 Hover glow (sea accent) */
+    --shadow-hover: 0 10px 25px rgba(59, 167, 160, 0.25);
+
+    /* ✨ Focus ring */
+    --focus-ring: 0 0 0 4px rgba(59, 167, 160, 0.15);
+
+    /* 🔘 Radius (для единого стиля) */
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+.header {
+    width: min(1400px, 100%);
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.header-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.main {
+    width: min(1400px, 100%);
+    margin: 0 auto;
+    padding: 40px;
+
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 20px;
+}
+
+.create-travel,
+.cards-travel {
+    background-color: var(--card-color);
+    border: var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.create-travel {
+    padding: 30px;
+    height: fit-content;
+}
+
+.travel-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.travel-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.travel-input--group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.travel-input--group label {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-main);
+}
+
+input::placeholder {
+    color: var(--text-main);
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--focus-ring);
+}
+
+.travel-btn {
+    padding: 15px;
+    border-radius: var(--radius-md);
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+.travel-btn:hover {
+    background: var(--primary-hover);
+    box-shadow: var(--shadow-hover);
+}
+
+.cards-travel {
+    min-height: 600px;
+    padding: 30px;
+}
+
+.empty-state {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 2px dashed var(--border-color);
+    background-color: var(--card-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+
+    font-size: 20px;
+}
+
+.cards-travel--list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-travel {
+    background-color: var(--card-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 20px;
+    transition: all 0.25s ease;
+}
+
+.card-travel:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-travel p {
+    padding: 4px 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+
+    background-color: rgba(123, 174, 127, 0.12);
+    color: var(--secondary-color);
+    border-radius: var(--radius-sm);
+}
+
+.delete-btn {
+    width: 100%;
+    max-width: 300px;
+
+    margin-top: 10px;
+    padding: 10px;
+
+    border: none;
+    border-radius: var(--radius-md);
+    background-color: #ef4444;
+    color: var(--bg-color);
+    transition: 0.2s ease;
+
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+
+@media (max-width: 900px) {
+
+    .main {
+        grid-template-columns: 1fr;
+    }
+
+    .delete-btn {
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .header {
+        padding: 20px;
+    }
+
+    .header-title {
+        font-size: 30px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .create-travel {
+        padding: 20px;
+    }
+
+    .travel-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .travel-form {
+        gap: 10px;
+    }
+
+    .travel-input--group label {
+        font-size: 15px;
+    }
+
+    input {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+    .travel-btn {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .empty-state {
+        font-size: 15px;
+    }
+
+    .cards-travel {
+        padding: 20px;
+    }
+
+    .cards-travel--list {
+        gap: 10px;
+    }
+
+    .card-travel {
+        padding: 10px;
+    }
+
+    .card-travel p {
+        font-size: 15px;
+    }
+
+    .delete-btn {
+        font-size: 15px;
+    }
+
+}
